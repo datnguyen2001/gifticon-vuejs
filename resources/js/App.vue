@@ -1,6 +1,8 @@
 <template>
     <Header />
+    <div class="max-w-[1400px] mx-auto w-full">
         <router-view />
+    </div>
     <Footer />
 </template>
 
