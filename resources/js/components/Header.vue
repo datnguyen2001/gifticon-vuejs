@@ -1,38 +1,36 @@
-<script>
+<script setup>
 import iconSearch from "@/assets/icon-search.png";
 import iconHeart from "@/assets/icon-heart.png";
 import iconCart from "@/assets/icon-cart.png";
-
-export default {
-    data() {
-        return {
-            iconSearch,
-            iconHeart,
-            iconCart,
-        };
-    },
-};
 </script>
 <template>
-    <header class="w-full border-b border-[#0E0E0E2E] border-solid">
-        <div class="max-w-[1400px] px-3 m-auto">
-            <div class="flex items-center justify-between">
-                <div class="text-logo font-semibold text-[#F1641E] text-[40px]">
+    <header
+        class="w-full border-b border-[#0E0E0E2E] border-solid fixed z-10 bg-white top-0"
+    >
+        <div class="max-w-[1400px] w-full md:px-3 px-2 m-auto">
+            <div class="flex items-center justify-between pt-2 md:mt-0">
+                <div
+                    class="text-logo font-semibold text-[#F1641E] lg:text-[40px] md:text-[34px] text-[28px]"
+                >
                     Gifticon
                 </div>
-                <div class="box-search-header w-[50%] relative">
+                <div class="md:w-[50%] w-[60%] relative">
                     <input
                         type="text"
                         placeholder="Tìm kiếm bất cứ thứ gì"
-                        class="input-search-header w-full h-[48px] pl-4 pr-12 border-black border border-solid rounded-[99px] text-black"
+                        class="input-search-header w-full md:h-[48px] h-[40px] pl-4 md:pr-12 pr-11 border-black border border-solid rounded-[99px] text-black"
                     />
                     <button
-                        class="absolute right-[5px] top-[50%] translate-y-[-50%] flex items-center justify-center w-[38px] h-[38px] rounded-[50%] bg-[#F1641E]"
+                        class="absolute right-[5px] top-[50%] translate-y-[-50%] flex items-center justify-center md:w-[38px] md:h-[38px] w-[32px] h-[32px] rounded-[50%] bg-[#F1641E]"
                     >
-                        <img :src="iconSearch" alt="" class="w-[22px]" />
+                        <img
+                            :src="iconSearch"
+                            alt=""
+                            class="md:w-[22px] w-[18px]"
+                        />
                     </button>
                 </div>
-                <div class="right-cart-like flex items-center gap-6">
+                <div class="right-cart-like md:flex hidden items-center gap-6">
                     <a href="#" class="text-[15px] cursor-pointer font-semibold"
                         >Đăng nhập</a
                     >
@@ -58,5 +56,3 @@ export default {
         </div>
     </header>
 </template>
-
-<style></style>
