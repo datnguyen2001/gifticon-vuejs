@@ -1,14 +1,14 @@
 <script setup>
-import { ref, onMounted } from 'vue';
-import axios from 'axios';
+import { computed, onMounted } from 'vue';
+import {useStore} from 'vuex';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/swiper-bundle.css';
 
-const items = ref([]);
+const store = useStore();
+const items = computed(() => store.getters['saleToday/saleToday']);
 
 const fetchItems = async () => {
-    const response = await axios.get('https://gifticon.krmedi.vn/api/sale-today');
-    items.value = response.data.data;
+    await store.dispatch('saleToday/getSaleToday');
 };
 
 onMounted(() => {

@@ -7,18 +7,17 @@ import SaleToday from "@/pages/Home/Partial/SaleToday.vue";
 </script>
 
 <template>
-    <div>
-        <div class="flex space-x-4">
-            <div class="w-1/2">
-                <SaleToday />
-            </div>
-            <div class="w-1/2">
-                <Banner />
-            </div>
+    <div class="grid gap-4 grid-cols-1 lg:grid-cols-2 lg:grid-rows-1">
+        <div class="lg:order-1 order-2">
+            <SaleToday />
         </div>
-
-        <Popular />
-        <FamousBrand />
-        <MayLike />
+        <div class="lg:order-2 order-1">
+            <Banner />
+        </div>
     </div>
+    <div class="mt-5">
+        <Popular />
+    </div>
+    <FamousBrand />
+    <MayLike />
 </template>
