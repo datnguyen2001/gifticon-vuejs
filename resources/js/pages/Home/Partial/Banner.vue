@@ -1,19 +1,15 @@
 <script setup>
-import { ref, onMounted } from 'vue';
-import axios from 'axios';
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import 'swiper/swiper-bundle.css';
+import { onMounted } from "vue";
+import { useBannerStore } from "@/stores/home/banner.ts";
+import {Swiper, SwiperSlide} from "swiper/vue";
+import "swiper/swiper-bundle.css";
 
-const items = ref([]);
-
-const fetchItems = async () => {
-    const response = await axios.get('https://gifticon.krmedi.vn/api/banner');
-    items.value = response.data.data;
-};
+const bannerStore = useBannerStore();
 
 onMounted(() => {
-    fetchItems();
+    bannerStore.fetchBanners();
 });
+
 </script>
 
 <template>
@@ -22,7 +18,7 @@ onMounted(() => {
         :slides-per-view="1"
         :loop="true"
     >
-        <SwiperSlide v-for="item in items" :key="item.id">
+        <SwiperSlide v-for="item in bannerStore.getBanner" :key="item.id">
             <img :src="`https://gifticon.krmedi.vn${item.src}`" alt="Banner Image" class="w-full h-auto">
         </SwiperSlide>
     </Swiper>
