@@ -3,7 +3,7 @@ import Banner from "@/pages/Home/Partial/Banner.vue";
 import FamousBrand from "@/pages/Home/Partial/FamousBrand.vue";
 import MayLike from "@/pages/Home/Partial/MayLike.vue";
 import Popular from "@/pages/Home/Partial/Popular.vue";
-import SaleToday from "@/pages/Home/Partial/SaleToday.vue";
+import SaleToday from "@/components/SaleToday.vue";
 </script>
 
 <template>

@@ -2,9 +2,7 @@
 import iconSearchSm from "@/assets/search-sm.png";
 </script>
 <template>
-    <div
-        class="flex lg:flex-nowrap flex-wrap items-center gap-3 md:gap-4 pt-4 lg:pt-7"
-    >
+    <div class="flex lg:flex-nowrap flex-wrap items-center gap-3 md:gap-4">
         <span class="font-bold text-[15px] md:text-[18px]">Khoảng giá</span>
         <div class="flex gap-2 flex-wrap items-center">
             <input

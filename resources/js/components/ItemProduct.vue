@@ -10,7 +10,7 @@ let products = [0, 2, 3, 4, 5, 6, 7, 5, 6, 7, 8, 9];
             class="cursor-pointer"
         >
             <img :src="imgProduct" class="w-full" />
-            <div class="text-center py-2 font-medium">
+            <div class="text-center py-2 font-medium flex flex-col gap-2">
                 <p class="text-[14px] truncate-text">
                     Triple Coffee Frappuccino Triple Coffee Frappuccino Triple
                     Coffee Frappuccino
