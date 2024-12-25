@@ -13,7 +13,7 @@ const mutations = {
 const actions = {
     async getSaleToday({ commit }) {
         try {
-            const response = await axios.get("https://gifticon.krmedi.vn/api/sale-today");
+            const response = await axios.get("/api/sale-today");
             commit("SET_SALE_TODAY", response.data.data || []); // Handle missing data
         } catch (error) {
             console.error("Error fetching sale today:", error);

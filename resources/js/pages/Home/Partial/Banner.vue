@@ -19,7 +19,7 @@ onMounted(() => {
         :loop="true"
     >
         <SwiperSlide v-for="item in bannerStore.getBanner" :key="item.id">
-            <img :src="`https://gifticon.krmedi.vn${item.src}`" alt="Banner Image" class="w-full h-auto">
+            <img :src="`${item.src}`" alt="Banner Image" class="w-full h-auto">
         </SwiperSlide>
     </Swiper>
 </template>
