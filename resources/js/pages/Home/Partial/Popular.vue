@@ -35,7 +35,7 @@ const filteredProducts = computed(() => {
     </ul>
     <div class="list-product-category flex flex-col flex-wrap items-center mt-5">
         <div v-for="(product, index) in filteredProducts" :key="product.product_id" :class="(index === 1 || index === 2 || index === 5 || index === 6) ? 'item-2' : 'item-1'" class="relative product-item">
-            <img :src="`https://gifticon.krmedi.vn/${product.product_src}`" :alt="`${product.product_name}`" class="w-full h-full object-cover">
+            <img :src="`${product.product_src}`" :alt="`${product.product_name}`" class="w-full h-full object-cover">
             <span class="absolute bottom-0">{{ product.product_id }}</span>
         </div>
     </div>

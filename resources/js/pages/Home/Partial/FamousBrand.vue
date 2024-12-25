@@ -26,7 +26,7 @@ onMounted(() => {
             }"
         >
             <SwiperSlide v-for="item in famousBrandStore.getFamousBrand" :key="item.id" class="swiper-slide-custom">
-                <img :src="`https://gifticon.krmedi.vn${item.src}`" alt="Banner Image" class="w-full h-auto object-contain max-h-[280px]">
+                <img :src="`${item.src}`" alt="Banner Image" class="w-full h-auto object-contain max-h-[280px]">
             </SwiperSlide>
         </Swiper>
     </div>

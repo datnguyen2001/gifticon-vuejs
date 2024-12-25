@@ -8,7 +8,7 @@ export const useFamousBrandStore = defineStore('famous-brand', {
     actions: {
         async fetchFamousBrand() {
             try {
-                const response = await axios.get("https://gifticon.krmedi.vn/api/trademark");
+                const response = await axios.get("/api/trademark");
                 // Update the correct state property
                 this.famousBrand = response.data.data || [];
             } catch (error) {

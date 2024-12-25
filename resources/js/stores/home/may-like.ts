@@ -8,7 +8,7 @@ export const useMayLike = defineStore('may-like', {
     actions: {
         async fetchMayLike() {
             try {
-                const response = await axios.get("https://gifticon.krmedi.vn/api/may-like");
+                const response = await axios.get("/api/may-like");
                 this.mayLike = response.data.data || [];
             } catch (error) {
                 console.error("Error fetching mayLike:", error);

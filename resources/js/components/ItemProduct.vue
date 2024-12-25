@@ -19,7 +19,7 @@ const formatPrice = (price) => {
             :key="index"
             class="cursor-pointer item-product"
         >
-            <img :src="`https://gifticon.krmedi.vn/${product.src}`" :alt="product.name" class="w-full object-contain h-[218px]" />
+            <img :src="`${product.src}`" :alt="product.name" class="w-full object-contain h-[218px]" />
             <div class="text-center py-2 font-medium flex flex-col gap-2">
                 <p class="text-[14px] truncate-text">
                     {{ product.name }}
