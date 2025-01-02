@@ -51,11 +51,11 @@ const togglePasswordVisibility = () => {
                     <div class="w-full relative">
                         <input
                             type="password"
-                            class="w-full border border-gray-300 rounded-[8px] p-3 outline-none md:text-[16px] text-[14px] input-password"
+                            class="w-full border border-gray-300 rounded-[8px] p-3 pr-9 outline-none md:text-[16px] text-[14px] input-password"
                         />
                         <img
                             :src="iconSee"
-                            class="w-[24px] h-[24px] cursor-pointer absolute right-0 top-0 translate-y-[50%] icon-eye"
+                            class="w-[24px] h-[24px] cursor-pointer absolute right-2 top-0 translate-y-[50%] icon-eye"
                             @click="togglePasswordVisibility"
                         />
                     </div>

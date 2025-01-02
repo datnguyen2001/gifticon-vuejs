@@ -2,6 +2,31 @@
 import iconZalo from "@/assets/icon-zalo.png";
 import iconFacebook from "@/assets/icon-fb.png";
 import iconEmail from "@/assets/icon-email.png";
+import iconSee from "@/assets/see.png";
+
+const togglePasswordVisibility = () => {
+    const passwordInput = document.querySelector(".input-password");
+    const icon = document.querySelector(".icon-eye");
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        icon.src = iconSee;
+    } else {
+        passwordInput.type = "password";
+        icon.src = iconSee;
+    }
+};
+
+const togglePasswordVisibility2 = () => {
+    const passwordInput = document.querySelector(".input-password2");
+    const icon = document.querySelector(".icon-eye2");
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        icon.src = iconSee;
+    } else {
+        passwordInput.type = "password";
+        icon.src = iconSee;
+    }
+};
 </script>
 <template>
     <div class="w-full h-full flex items-center justify-center flex-col gap-4">
@@ -9,7 +34,7 @@ import iconEmail from "@/assets/icon-email.png";
         <p
             class="text-[#333333] font-medium lg:text-[38px] md:text-[30px] text-[22px]"
         >
-            Đăng nhập
+            Đăng ký
         </p>
         <div
             class="w-full flex-col flex lg:flex-row justify-center items-center lg:gap-7 gap-4"
@@ -18,8 +43,18 @@ import iconEmail from "@/assets/icon-email.png";
                 <p
                     class="text-center text-[#111111] font-medium md:text-[24px] text-[18px] lg:inline-block hidden"
                 >
-                    Đăng nhập
+                    Đăng ký
                 </p>
+                <div class="flex flex-col gap-1">
+                    <span
+                        class="text-[#666666] font-normal md:text-[16px] text-[14px]"
+                        >Họ và tên</span
+                    >
+                    <input
+                        type="text"
+                        class="w-full border border-gray-300 rounded-[8px] p-3 outline-none md:text-[16px] text-[14px]"
+                    />
+                </div>
                 <div class="flex flex-col gap-1">
                     <span
                         class="text-[#666666] font-normal md:text-[16px] text-[14px]"
@@ -35,10 +70,34 @@ import iconEmail from "@/assets/icon-email.png";
                         class="text-[#666666] font-normal md:text-[16px] text-[14px]"
                         >Mật khẩu</span
                     >
-                    <input
-                        type="text"
-                        class="w-full border border-gray-300 rounded-[8px] p-3 outline-none md:text-[16px] text-[14px]"
-                    />
+                    <div class="w-full relative">
+                        <input
+                            type="password"
+                            class="w-full border border-gray-300 rounded-[8px] p-3 pr-9 outline-none md:text-[16px] text-[14px] input-password"
+                        />
+                        <img
+                            :src="iconSee"
+                            class="w-[24px] h-[24px] cursor-pointer absolute right-2 top-0 translate-y-[50%] icon-eye"
+                            @click="togglePasswordVisibility"
+                        />
+                    </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <span
+                        class="text-[#666666] font-normal md:text-[16px] text-[14px]"
+                        >Nhập lại mật khẩu</span
+                    >
+                    <div class="w-full relative">
+                        <input
+                            type="password"
+                            class="w-full border border-gray-300 rounded-[8px] p-3 pr-9 outline-none md:text-[16px] text-[14px] input-password2"
+                        />
+                        <img
+                            :src="iconSee"
+                            class="w-[24px] h-[24px] cursor-pointer absolute right-2 top-0 translate-y-[50%] icon-eye2"
+                            @click="togglePasswordVisibility2"
+                        />
+                    </div>
                 </div>
                 <button
                     class="outline-none bg-[#c3c3c3] text-[white] rounded-[32px] p-3 lg:text-[22px] md:text-[18px] text-[16px] font-medium"
@@ -64,27 +123,27 @@ import iconEmail from "@/assets/icon-email.png";
                     class="outline-none text-[#333333] rounded-[32px] p-3 lg:text-[22px] md:text-[18px] text-[16px] font-medium border border-[#333333] w-[400px] max-w-[96%] flex items-center justify-center gap-2"
                 >
                     <img :src="iconZalo" class="w-[24px] h-[24px]" />
-                    Đăng nhập bằng Zalo
+                    Đăng ký bằng Zalo
                 </button>
                 <button
                     class="outline-none text-[#333333] rounded-[32px] p-3 lg:text-[22px] md:text-[18px] text-[16px] font-medium border border-[#333333] w-[400px] max-w-[96%] flex items-center justify-center gap-2"
                 >
                     <img :src="iconFacebook" class="w-[24px] h-[24px]" />
-                    Đăng nhập bằng Facebook
+                    Đăng ký bằng Facebook
                 </button>
                 <button
                     class="outline-none text-[#333333] rounded-[32px] p-3 lg:text-[22px] md:text-[18px] text-[16px] font-medium border border-[#333333] w-[400px] max-w-[96%] flex items-center justify-center gap-2"
                 >
                     <img :src="iconEmail" class="w-[24px] h-[24px]" />
-                    Đăng nhập bằng Email
+                    Đăng ký bằng Email
                 </button>
             </div>
         </div>
         <div
             class="w-full flex items-center justify-center gap-2 md:text-[18px] text-[16px] font-medium text-[#111111] md:my-[24px] my-[16px]"
         >
-            <p>Bạn chưa có tài khoản?</p>
-            <router-link to="/dang-ky">Đăng ký</router-link>
+            <p>Bạn đã có tài khoản?</p>
+            <router-link to="/dang-nhap">Đăng nhập</router-link>
         </div>
         <div class="text-[#666666] font-normal md:text-[16px] text-[14px] mb-6">
             <p class="text-center">
