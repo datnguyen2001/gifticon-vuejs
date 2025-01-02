@@ -8,7 +8,7 @@ export const usePopular = defineStore('popular', {
     actions: {
         async fetchPopular() {
             try {
-                const response = await axios.get("https://gifticon.krmedi.vn/api/product-sort-by-category");
+                const response = await axios.get("/api/product-sort-by-category");
                 this.popular = response.data.data || [];
             } catch (error) {
                 console.error("Error fetching popular:", error);

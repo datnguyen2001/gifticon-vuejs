@@ -13,7 +13,7 @@ const mutations = {
 const actions = {
     async getBanners({ commit }) {
         try {
-            const response = await axios.get("https://gifticon.krmedi.vn/api/banner");
+            const response = await axios.get("/api/banner");
             commit("SET_BANNERS", response.data.data || []); // Handle missing data
         } catch (error) {
             console.error("Error fetching banners:", error);

@@ -8,7 +8,7 @@ export const useBannerStore = defineStore('banner', {
     actions: {
         async fetchBanners() {
             try {
-                const response = await axios.get("https://gifticon.krmedi.vn/api/banner");
+                const response = await axios.get("/api/banner");
                 // Update the correct state property
                 this.banner = response.data.data || [];
             } catch (error) {

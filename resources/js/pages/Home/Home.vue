@@ -1,9 +1,9 @@
 <script setup>
 import Banner from "@/pages/Home/Partial/Banner.vue";
 import FamousBrand from "@/pages/Home/Partial/FamousBrand.vue";
-import MayLike from "@/pages/Home/Partial/MayLike.vue";
 import Popular from "@/pages/Home/Partial/Popular.vue";
 import SaleToday from "@/components/SaleToday.vue";
+import ItemProduct from "@/components/ItemProduct.vue";
 </script>
 
 <template>
@@ -18,6 +18,11 @@ import SaleToday from "@/components/SaleToday.vue";
     <div class="mt-5">
         <Popular />
     </div>
-    <FamousBrand />
-    <MayLike />
+    <div class="mt-5">
+        <FamousBrand />
+    </div>
+    <div class="mt-5">
+        <h3 class="text-xl font-medium text-left mb-4">Có thể bạn cũng thích</h3>
+        <ItemProduct />
+    </div>
 </template>
